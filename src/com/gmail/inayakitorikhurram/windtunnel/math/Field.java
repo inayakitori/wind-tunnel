@@ -1,8 +1,12 @@
 package com.gmail.inayakitorikhurram.windtunnel.math;
 
-import java.awt.*;
-
-public class Field<T> {
-    Rectangle area;// area for the field
-    T[][] vals;
+public interface Field<E,F extends Field> {
+    F add(E element);
+    F add(F other);
+    F sub(E element);
+    F sub(F other);
+    F mul(E element);
+    F mul(F other);
+    E integrate(F mask);
+    F clone();
 }

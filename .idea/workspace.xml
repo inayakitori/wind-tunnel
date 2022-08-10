@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96234380-acae-44f9-aafa-4189d9a4fa4a" name="Changes" comment="Init commit&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Curve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Field.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2.java" afterDir="false" />
+    <list default="true" id="96234380-acae-44f9-aafa-4189d9a4fa4a" name="Changes" comment="Started on math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/FieldFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldv.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Rectf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2f.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2i.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Curve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Curve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,13 +45,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.gmail.inayakitorikhurram.windtunnel.math" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660128435328</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Started on math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
+      <created>1660129062728</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660129062728</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -75,6 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <MESSAGE value="Started on math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started on math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
   </component>
 </project>
