@@ -1,6 +1,10 @@
 package com.gmail.inayakitorikhurram.windtunnel;
 
 import com.gmail.inayakitorikhurram.windtunnel.math.*;
+import com.gmail.inayakitorikhurram.windtunnel.rendering.Renderer;
+import com.gmail.inayakitorikhurram.windtunnel.simulating.Simulator;
+
+import java.awt.*;
 
 public class Settings {
 
@@ -8,7 +12,12 @@ public class Settings {
 
     public float resolution;
     public Rectf bounds;
-
+    public Color backgroundColor;
+    public int msPerFrame;
+    public int msPerTick;
+    public Renderer renderer;
+    public Simulator simulator;
+    public Aerofoil aerofoil;
     private Settings(){
     }
 
@@ -18,5 +27,11 @@ public class Settings {
         }
         return settings;
     }
+
+    public Vector2i getPixels(){
+        Vector2f dims = bounds.start.clone().sub(settings.bounds.end);
+        return dims.div(settings.resolution).getFloor();
+    }
+
 
 }

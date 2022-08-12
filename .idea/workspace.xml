@@ -4,21 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96234380-acae-44f9-aafa-4189d9a4fa4a" name="Changes" comment="Started on math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/FieldFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldv.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Rectf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2f.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2i.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" afterDir="false" />
+    <list default="true" id="96234380-acae-44f9-aafa-4189d9a4fa4a" name="Changes" comment="started on rendering process&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Aerofoil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/AerofoilDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/MyMath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Curve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Curve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Rectf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Rectf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2f.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2i.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2i.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/rendering/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/rendering/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +58,26 @@
       <recent name="com.gmail.inayakitorikhurram.windtunnel.math" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gmail.inayakitorikhurram.windtunnel.Main" />
+      <module name="WindTunnel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gmail.inayakitorikhurram.windtunnel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -80,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660129062728</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="More math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
+      <created>1660170513341</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660170513341</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +125,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
     <MESSAGE value="Started on math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started on math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <MESSAGE value="More math&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <MESSAGE value="More math x2&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <MESSAGE value="started on rendering process&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="started on rendering process&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.OutOfMemoryError" package="java.lang" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.gmail.inayakitorikhurram.windtunnel.math.Aerofoil" memberName="top" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

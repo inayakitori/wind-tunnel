@@ -82,7 +82,7 @@ public class Vector2f implements Vector<Float, Vector2f>{ //only need Vector2s
         return y;
     }
 
-    public float get(int i){
+    public Float get(int i){
         return switch (i) {
             case 0 -> x;
             case 1 -> y;

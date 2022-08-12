@@ -9,8 +9,6 @@ public class Simulator {
     private Fieldv u; //flow vel
     private Fieldf p; //pressure
 
-    public Simulator;
-
     public void tick(){
 
     }

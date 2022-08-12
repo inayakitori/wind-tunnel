@@ -9,7 +9,7 @@ public class Fieldv implements Field<Vector2f, Fieldv>{
 
     public Fieldv(Fieldv other){
         settings = Settings.getInstance();
-        Vector2f dims = settings.bounds.start.sub(settings.bounds.end);
+        Vector2f dims = settings.bounds.start.clone().sub(settings.bounds.end);
         pixels = other.pixels.clone();
         vals = new Vector2f[pixels.getX()][pixels.getY()];
 
@@ -21,7 +21,7 @@ public class Fieldv implements Field<Vector2f, Fieldv>{
 
     public Fieldv(Vector2f v0){
         settings = Settings.getInstance();
-        Vector2f dims = settings.bounds.start.sub(settings.bounds.end);
+        Vector2f dims = settings.bounds.start.clone().sub(settings.bounds.end);
         pixels = dims.div(settings.resolution).getFloor();
         vals = new Vector2f[pixels.getX()][pixels.getY()];
 
@@ -32,7 +32,7 @@ public class Fieldv implements Field<Vector2f, Fieldv>{
     }
 
     public Fieldv(){
-        this(Vector2i.zero());
+        this(Vector2f.zero());
     }
 
     //NOTE: NO CHECK FOR DIMENSION MISMATCH.

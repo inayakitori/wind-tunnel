@@ -1,8 +1,8 @@
 package com.gmail.inayakitorikhurram.windtunnel.math;
 
 public class Rectf {
-    Vector2f start;
-    Vector2f end;
+    public Vector2f start;
+    public Vector2f end;
 
     public Rectf(Vector2f start, Vector2f end){
         this.start = new Vector2f(start);

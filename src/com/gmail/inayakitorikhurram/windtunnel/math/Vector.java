@@ -11,4 +11,5 @@ public interface Vector<E, V extends Vector> {
     V eMul(V other);
     E dot(V other);
     V clone();
+    E get(int i);
 }
