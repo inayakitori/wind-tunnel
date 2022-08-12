@@ -13,7 +13,7 @@ public class Curve {
         yVals = new float[pixels];
 
         int p0 = 0;
-        int p1 = 0;
+        int p1;
         for(int i = 0; i < yVals.length; i++){
             float x = i * settings.resolution;
             if(x < points[0].x || x > points[points.length-1].x){
@@ -31,7 +31,7 @@ public class Curve {
 
                 //now p0.x < x < p1.x;
 
-                yVals[i] = MyMath.map(points[p0].x, points[p1].x, points[p1].y, points[p1].y, x);
+                yVals[i] = MyMath.map(points[p0].x, points[p1].x, points[p0].y, points[p1].y, x);
             }
         }
     }

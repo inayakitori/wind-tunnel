@@ -77,7 +77,7 @@ public class Renderer extends Canvas {
                 }
             }}
 
-            g2d.drawImage(img, 0, 0, pixels.x, pixels.y, new Color(0.99f, 0f, 0f, 0.5f), null);
+            g2d.drawImage(img, 0, 0, new Color(0.99f, 0f, 0f, 0.5f), null);
 
             // blit the back buffer to the screen
             if(!bs.contentsLost()) {

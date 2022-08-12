@@ -12,6 +12,7 @@ public class Settings {
 
     public float resolution;
     public Rectf bounds;
+    private Vector2i pixels;
     public Color backgroundColor;
     public int msPerFrame;
     public int msPerTick;
@@ -29,8 +30,11 @@ public class Settings {
     }
 
     public Vector2i getPixels(){
-        Vector2f dims = bounds.start.clone().sub(settings.bounds.end);
-        return dims.div(settings.resolution).getFloor();
+        if(pixels == null){
+            Vector2f dims = bounds.start.clone().sub(settings.bounds.end);
+            pixels = dims.div(settings.resolution).getFloor();
+        }
+        return pixels;
     }
 
 

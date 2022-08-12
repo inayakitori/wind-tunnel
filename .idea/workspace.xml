@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96234380-acae-44f9-aafa-4189d9a4fa4a" name="Changes" comment="started on rendering process&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Aerofoil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/AerofoilDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/MyMath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Curve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Curve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Fieldv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Rectf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Rectf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2f.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2i.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Vector2i.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/rendering/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/rendering/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660170513341</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="started on rendering process&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
+      <created>1660263639165</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660263639165</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
