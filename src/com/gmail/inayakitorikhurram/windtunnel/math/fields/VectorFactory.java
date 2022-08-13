@@ -1,12 +1,14 @@
 package com.gmail.inayakitorikhurram.windtunnel.math.fields;
 
 import com.gmail.inayakitorikhurram.windtunnel.Settings;
+import com.gmail.inayakitorikhurram.windtunnel.math.MyMath;
 
 public class VectorFactory {
 
     private static Settings settings;
 
     public static <E extends VectorSpaceElement<?,E>> E zero(VectorSpaceElement e) {
+        getSettings();
         VectorSpaceElement zeroVal = null;
         if (e.getClass().equals(RealNumber.class)) {
             zeroVal = new RealNumber(0);
@@ -22,6 +24,7 @@ public class VectorFactory {
     <F extends FieldElement<F>, E extends VectorSpaceElement<F,E>>
     VectorSpace<F,E>
     vectorSpace(VectorSpaceElement<F,E> e){
+        getSettings();
         if (e.getClass().equals(RealNumber.class)) {
             return vectorSpace(e, (VectorSpaceElement<F, E>) new RealNumber(0));
         } else if(e.getClass().equals(Vector2f.class)){
@@ -43,12 +46,11 @@ public class VectorFactory {
         getSettings();
 
         VectorSpace<FIELD, VECTOR> vs = new VectorSpace<>();
-        Vector2f dims = settings.bounds.start.clone().sub(settings.bounds.end);
-        vs.pixels = dims.div(new RealNumber(settings.resolution)).getFloor();
+        vs.pixels = settings.getPixels();
         vs.vals = array(e, vs.pixels);
 
         for(int i = 0; i < vs.pixels.x.unwrap(); i++){ for(int j = 0; j < vs.pixels.y.unwrap(); j++){
-            vs.vals[i][j].copyFrom((VECTOR) v0);
+            vs.vals[i][j] = v0.clone();
         }}
 
         return vs;
@@ -64,8 +66,7 @@ public class VectorFactory {
         getSettings();
 
         VectorSpace<FIELD, VECTOR> vs = new VectorSpace<>();
-        Vector2f dims = settings.bounds.start.clone().sub(settings.bounds.end);
-        vs.pixels = dims.div(new RealNumber(settings.resolution)).getFloor();
+        vs.pixels = settings.getPixels();
         vs.vals = array(e, vs.pixels);
 
         for(int i = 0; i < vs.pixels.x.unwrap(); i++){ for(int j = 0; j < vs.pixels.y.unwrap(); j++){
@@ -76,9 +77,30 @@ public class VectorFactory {
     }
 
     public static
+    <FIELD extends FieldElement<FIELD>, VECTOR extends VectorSpaceElement<FIELD, VECTOR>>
+    VectorSpace<FIELD, VECTOR>
+    vectorSpace(
+            VectorSpaceElement<FIELD, VECTOR> e,
+            FieldFunction<VECTOR> func
+    ){
+        getSettings();
+
+        VectorSpace<FIELD, VECTOR> vs = new VectorSpace<>();
+        vs.pixels = settings.getPixels();
+        vs.vals = array(e, vs.pixels);
+
+        for(int i = 0; i < vs.pixels.x.unwrap(); i++){ for(int j = 0; j < vs.pixels.y.unwrap(); j++){
+            vs.vals[i][j] = func.f(new Vector2i(i, j));
+        }}
+
+        return vs;
+    }
+
+    public static
     <FIELD extends  FieldElement<FIELD>, VECTOR extends VectorSpaceElement<FIELD, VECTOR>>
     VECTOR[][]
     array(VectorSpaceElement<FIELD, VECTOR> e, Vector2i dims){
+        getSettings();
         if (e.getClass().equals(RealNumber.class)) {
             return (VECTOR[][]) new RealNumber[dims.x.unwrap()][dims.y.unwrap()];
         }else if(e.getClass().equals(Vector2f.class)){

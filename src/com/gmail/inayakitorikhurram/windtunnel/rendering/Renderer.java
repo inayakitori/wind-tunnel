@@ -1,7 +1,11 @@
 package com.gmail.inayakitorikhurram.windtunnel.rendering;
 
 import com.gmail.inayakitorikhurram.windtunnel.Settings;
+import com.gmail.inayakitorikhurram.windtunnel.math.MyMath;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.RealNumber;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2f;
 import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2i;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.VectorSpace;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +22,7 @@ public class Renderer extends Canvas {
     Vector2i pixels;
     private BufferStrategy bs;
     Graphics g = null;
+    int count = 0;
     public Renderer() {
         super();
         settings = Settings.getInstance();
@@ -67,16 +72,17 @@ public class Renderer extends Canvas {
             g2d.clearRect(0, 0, getWidth(), getHeight());
 
             BufferedImage img = new BufferedImage(pixels.uget(0), pixels.uget(1), BufferedImage.TYPE_INT_RGB);
+            drawVectorSpace(img, settings.simulator.getFlow(), new RealNumber(-2), new RealNumber(2));
 
-            for(int i = 0; i < pixels.uget(0); i++){ for(int j = 0; j < pixels.uget(1); j++){
-                if(settings.aerofoil.isInAeroFoil(new Vector2i(i,j))){
-                    img.setRGB(i, j, 0xFFFF00FF);
-                } else{
-                    img.setRGB(i, j, 0xFF00FF00);
-                }
-            }}
+//            for(int i = 0; i < pixels.uget(0); i++){ for(int j = 0; j < pixels.uget(1); j++){
+//                if(settings.airfoil.isInAeroFoil(new Vector2i(i,j))){
+//                    img.setRGB(i, j, 0xFFFF00FF);
+//                }
+//            }}
 
-            g2d.drawImage(img, 0, 0, new Color(0.99f, 0f, 0f, 0.5f), null);
+
+            g2d.drawImage(img, 0, pixels.uget(1), pixels.uget(0), -pixels.uget(1), new Color(0.99f, 0f, 0f, 0.5f), null);
+            //g2d.drawImage(img, 0, 0, pixels.uget(0), pixels.uget(1), new Color(0.99f, 0f, 0f, 0.5f), null);
 
             // blit the back buffer to the screen
             if(!bs.contentsLost()) {
@@ -89,6 +95,16 @@ public class Renderer extends Canvas {
             if( g != null )
                 g.dispose();
         }
+        count++;
+    }
+
+    private void drawVectorSpace(BufferedImage img, VectorSpace<RealNumber, Vector2f> vs, RealNumber min, RealNumber max){
+        for(int i = 0; i < pixels.uget(0); i++){ for(int j = 0; j < pixels.uget(1); j++){
+            Vector2f val = vs.get(i, j);
+            float x = MyMath.map(min.unwrap(), max.unwrap(), 0f, 1f, val.uget(0));
+            float y = MyMath.map(min.unwrap(), max.unwrap(), 0f, 1f, val.uget(1));
+            img.setRGB(i, j, new Color(x, y, 0.5f).getRGB());
+        }}
     }
 
 }

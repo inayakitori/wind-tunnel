@@ -9,6 +9,10 @@ public class RealNumber implements UnwrappableField<Float, RealNumber> {
         this.v = v;
     }
 
+    public RealNumber(IntegerNumber i) {
+        v = i.unwrap();
+    }
+
     @Override
     public RealNumber uadd(Float other) {
         v += other;
@@ -46,19 +50,19 @@ public class RealNumber implements UnwrappableField<Float, RealNumber> {
 
     @Override
     public RealNumber sub(RealNumber other) {
-        v += other.v;
+        v -= other.v;
         return this;
     }
 
     @Override
     public RealNumber div(RealNumber other) {
-        v += other.v;
+        v /= other.v;
         return this;
     }
 
     @Override
     public RealNumber mul(RealNumber other) {
-        v += other.v;
+        v *= other.v;
         return this;
     }
 

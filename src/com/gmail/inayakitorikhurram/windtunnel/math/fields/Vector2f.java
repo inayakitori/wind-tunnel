@@ -19,6 +19,10 @@ public class Vector2f implements Vector<RealNumber, Vector2f>, UnwrappableVector
         this.y = other.y.clone();
     }
 
+    public Vector2f(Vector2i other){
+        this.x = new RealNumber(other.x);
+        this.y = new RealNumber(other.y);
+    }
 
 
     @Override

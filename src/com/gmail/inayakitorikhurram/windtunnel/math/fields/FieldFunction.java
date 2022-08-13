@@ -1,5 +1,5 @@
 package com.gmail.inayakitorikhurram.windtunnel.math.fields;
 
-public interface FieldFunction<I,O> {
-    O f(I input);
+public interface FieldFunction<OUT extends VectorSpaceElement<?, OUT>>{
+    OUT f(Vector2i x);
 }

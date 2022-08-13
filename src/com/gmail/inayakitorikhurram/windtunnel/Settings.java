@@ -1,6 +1,7 @@
 package com.gmail.inayakitorikhurram.windtunnel;
 
 import com.gmail.inayakitorikhurram.windtunnel.math.*;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.RealNumber;
 import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2f;
 import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2i;
 import com.gmail.inayakitorikhurram.windtunnel.rendering.Renderer;
@@ -20,7 +21,9 @@ public class Settings {
     public int msPerTick;
     public Renderer renderer;
     public Simulator simulator;
-    public Aerofoil aerofoil;
+    public Vector2f initFlow;
+    public RealNumber initPressure;
+    public Airfoil airfoil;
     private Settings(){
     }
 
@@ -33,7 +36,7 @@ public class Settings {
 
     public Vector2i getPixels(){
         if(pixels == null){
-            Vector2f dims = bounds.start.clone().sub(settings.bounds.end);
+            Vector2f dims = bounds.end.clone().sub(settings.bounds.start);
             pixels = dims.udiv(settings.resolution).getFloor();
         }
         return pixels;

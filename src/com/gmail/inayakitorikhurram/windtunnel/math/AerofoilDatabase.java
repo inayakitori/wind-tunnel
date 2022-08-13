@@ -4,8 +4,9 @@ import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2f;
 
 public class AerofoilDatabase {
 
-public static final Aerofoil BOEING737 =
-        new Aerofoil(
+
+public static final Airfoil BOEING737 =  //http://airfoiltools.com/airfoil/details?airfoil=b737b-il
+        new Airfoil(
             new Curve(
                     new Vector2f[]{
                         new Vector2f(0.000000f, 0.008800f),

@@ -33,10 +33,23 @@ public class MyMath {
     }
 
     public static Vector2f pixelToPosition(Vector2i pixel, Settings settings){
+        return pixelToPosition(pixel.uget(0), pixel.uget(1), settings);
+    }
+
+    public static Vector2f pixelToPosition(int i, int j, Settings settings) {
         Vector2i pixels = settings.getPixels();
-        float x = map(0, pixels.uget(0), settings.bounds.start.uget(0), settings.bounds.end.uget(0), pixel.uget(0));
-        float y = map(0, pixels.uget(1), settings.bounds.start.uget(1), settings.bounds.end.uget(1), pixel.uget(1));
+        float x = map(0, pixels.uget(0), settings.bounds.start.uget(0), settings.bounds.end.uget(0), i);
+        float y = map(0, pixels.uget(1), settings.bounds.start.uget(1), settings.bounds.end.uget(1), j);
         return new Vector2f(x, y);
     }
 
+    public static Vector2i positionToPixel(Vector2f position, Settings settings) {
+        return positionToPixel(position.uget(0), position.uget(1), settings);
+    }
+    public static Vector2i positionToPixel(float x, float y, Settings settings) {
+        Vector2i pixels = settings.getPixels();
+        int i = (int)Math.floor(map(settings.bounds.start.uget(0), settings.bounds.end.uget(0), 0, pixels.uget(0), x));
+        int j = (int)Math.floor(map(settings.bounds.start.uget(1), settings.bounds.end.uget(1), 0, pixels.uget(1), y));
+        return new Vector2i(i, j);
+    }
 }

@@ -2,6 +2,7 @@ package com.gmail.inayakitorikhurram.windtunnel.math;
 
 import com.gmail.inayakitorikhurram.windtunnel.Settings;
 import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2f;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2i;
 
 
 public class Curve {
@@ -9,14 +10,13 @@ public class Curve {
     private Settings settings;
     public Curve(Vector2f[] points){
         settings = Settings.getInstance();
-        float width = settings.bounds.start.uget(0) - settings.bounds.end.uget(0);
-        int pixels = (int)Math.floor(width/settings.resolution);
-        yVals = new float[pixels];
+        Vector2i pixels = settings.getPixels();
+        yVals = new float[pixels.uget(0)];
 
         int p0 = 0;
         int p1;
         for(int i = 0; i < yVals.length; i++){
-            float x = i * settings.resolution;
+            float x = MyMath.map(0, yVals.length, settings.bounds.start.uget(0),settings.bounds.end.uget(0), i);
             if(x < points[0].uget(0) || x > points[points.length-1].uget(0)){
                 yVals[i] = 0;
             } else {
@@ -32,7 +32,7 @@ public class Curve {
 
                 //now p0.x < x < p1.x;
 
-                yVals[i] = MyMath.map(points[p0].uget(0), points[p1].uget(0), points[p0].uget(0), points[p1].uget(0), x);
+                yVals[i] = MyMath.map(points[p0].uget(0), points[p1].uget(0), points[p0].uget(1), points[p1].uget(1), x);
             }
         }
     }

@@ -6,7 +6,7 @@ public class VectorSpace
         <
                 FIELD extends FieldElement<FIELD>,
                 VECTOR extends VectorSpaceElement<FIELD, VECTOR>
-                > {
+                >{
     protected VECTOR[][] vals;
     protected Vector2i pixels;
     protected Settings settings;
@@ -28,7 +28,7 @@ public class VectorSpace
         return this;
     }
 
-    
+
     public VectorSpace<FIELD, VECTOR> add(VectorSpace<FIELD, FIELD> scalarField) {
         for(int i = 0; i < pixels.x.unwrap(); i++){ for(int j = 0; j < pixels.y.unwrap(); j++){
             vals[i][j].add(scalarField.vals[i][j]);
@@ -44,7 +44,7 @@ public class VectorSpace
         }}
         return this;
     }
-    
+
     public VectorSpace<FIELD, VECTOR> sub(VECTOR element) {
         //for every pixel
         for(int i = 0; i < pixels.x.unwrap(); i++){ for(int j = 0; j < pixels.y.unwrap(); j++){
@@ -69,7 +69,7 @@ public class VectorSpace
         return this;
     }
 
-    
+
     public VectorSpace<FIELD, VECTOR> mul(VectorSpace<FIELD, FIELD> other) {
         for(int i = 0; i < pixels.x.unwrap(); i++){ for(int j = 0; j < pixels.y.unwrap(); j++){
             vals[i][j].mul(other.vals[i][j]);
@@ -88,6 +88,14 @@ public class VectorSpace
         }}
         sum.mul((FIELD)da);
         return sum;
+    }
+
+    public VECTOR get(int i, int j){
+        return vals[i][j].clone();
+    }
+
+    public VECTOR get(Vector2i x){
+        return vals[x.uget(0)][x.uget(1)].clone();
     }
 
 }
