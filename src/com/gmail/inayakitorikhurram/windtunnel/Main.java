@@ -2,7 +2,6 @@ package com.gmail.inayakitorikhurram.windtunnel;
 
 import com.gmail.inayakitorikhurram.windtunnel.math.*;
 import com.gmail.inayakitorikhurram.windtunnel.rendering.Renderer;
-import com.gmail.inayakitorikhurram.windtunnel.simulating.Simulator;
 
 import java.awt.*;
 

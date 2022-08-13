@@ -1,8 +1,7 @@
 package com.gmail.inayakitorikhurram.windtunnel.rendering;
 
 import com.gmail.inayakitorikhurram.windtunnel.Settings;
-import com.gmail.inayakitorikhurram.windtunnel.math.Aerofoil;
-import com.gmail.inayakitorikhurram.windtunnel.math.Vector2i;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2i;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,14 +22,14 @@ public class Renderer extends Canvas {
         super();
         settings = Settings.getInstance();
         pixels = settings.getPixels();
-        setSize(pixels.x, pixels.y);
+        setSize(pixels.uget(0), pixels.uget(1));
 
 
 
         setIgnoreRepaint(true);
         JFrame frame = new JFrame("Wind Tunnel");
         frame.setUndecorated(false);
-        frame.setSize(pixels.x, pixels.y);
+        frame.setSize(pixels.uget(0), pixels.uget(1));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setIgnoreRepaint(true);
@@ -67,9 +66,9 @@ public class Renderer extends Canvas {
             g2d.setBackground(settings.backgroundColor);
             g2d.clearRect(0, 0, getWidth(), getHeight());
 
-            BufferedImage img = new BufferedImage(pixels.x, pixels.y, BufferedImage.TYPE_INT_RGB);
+            BufferedImage img = new BufferedImage(pixels.uget(0), pixels.uget(1), BufferedImage.TYPE_INT_RGB);
 
-            for(int i = 0; i < pixels.x; i++){ for(int j = 0; j < pixels.y; j++){
+            for(int i = 0; i < pixels.uget(0); i++){ for(int j = 0; j < pixels.uget(1); j++){
                 if(settings.aerofoil.isInAeroFoil(new Vector2i(i,j))){
                     img.setRGB(i, j, 0xFFFF00FF);
                 } else{

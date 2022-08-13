@@ -1,6 +1,8 @@
 package com.gmail.inayakitorikhurram.windtunnel;
 
 import com.gmail.inayakitorikhurram.windtunnel.math.*;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2f;
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2i;
 import com.gmail.inayakitorikhurram.windtunnel.rendering.Renderer;
 import com.gmail.inayakitorikhurram.windtunnel.simulating.Simulator;
 
@@ -32,7 +34,7 @@ public class Settings {
     public Vector2i getPixels(){
         if(pixels == null){
             Vector2f dims = bounds.start.clone().sub(settings.bounds.end);
-            pixels = dims.div(settings.resolution).getFloor();
+            pixels = dims.udiv(settings.resolution).getFloor();
         }
         return pixels;
     }

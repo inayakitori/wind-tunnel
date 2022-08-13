@@ -1,5 +1,7 @@
 package com.gmail.inayakitorikhurram.windtunnel.math;
 
+import com.gmail.inayakitorikhurram.windtunnel.math.fields.Vector2f;
+
 public class AerofoilDatabase {
 
 public static final Aerofoil BOEING737 =
