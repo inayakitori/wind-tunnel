@@ -18,11 +18,11 @@ public class FieldOperations {
             }
         });
 
-        return dfx;
+        return null;
     }
 
     public static VectorSpace<RealNumber, Vector2f> d2fdx2(VectorSpace<RealNumber, Vector2f> fx, int dir){
-        return dfdx(dfdx(fx, dir),dir);
+        return null;
     }
 
 

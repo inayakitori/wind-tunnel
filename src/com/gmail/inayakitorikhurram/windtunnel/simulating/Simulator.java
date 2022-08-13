@@ -28,7 +28,9 @@ public class Simulator {
 
 
     public VectorSpace<RealNumber, Vector2f> calculateChangeInFlow(){
-        VectorSpace<RealNumber, Vector2f> dudx = FieldOperations.dfdx(u);
+        //VectorSpace<RealNumber, Vector2f> dudx =
+
+        return null;
     }
 
     public VectorSpace<RealNumber, Vector2f> getFlow(){
