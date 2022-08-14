@@ -32,40 +32,71 @@ public class Matrix2x2f implements Matrix<RealNumber, Matrix2x2f>{
     @Override
     public Matrix2x2f eDiv(Matrix2x2f other) {
         vals[0][0].div(other.vals[0][0]);
+        vals[0][1].div(other.vals[0][1]);
+        vals[1][0].div(other.vals[1][0]);
+        vals[1][1].div(other.vals[1][1]);
         return this;
     }
 
     @Override
     public Matrix2x2f eMul(Matrix2x2f other) {
+        vals[0][0].mul(other.vals[0][0]);
+        vals[0][1].mul(other.vals[0][1]);
+        vals[1][0].mul(other.vals[1][0]);
+        vals[1][1].mul(other.vals[1][1]);
         return this;
     }
 
     @Override
     public Matrix2x2f add(RealNumber element) {
+        vals[0][0].add(element);
+        vals[0][1].add(element);
+        vals[1][0].add(element);
+        vals[1][1].add(element);
         return this;
     }
 
     @Override
     public Matrix2x2f add(Matrix2x2f other) {
+        vals[0][0].add(other.vals[0][0]);
+        vals[0][1].add(other.vals[0][1]);
+        vals[1][0].add(other.vals[1][0]);
+        vals[1][1].add(other.vals[1][1]);
         return this;
     }
 
     @Override
     public Matrix2x2f sub(RealNumber element) {
+        vals[0][0].sub(element);
+        vals[0][1].sub(element);
+        vals[1][0].sub(element);
+        vals[1][1].sub(element);
         return this;
     }
 
     @Override
     public Matrix2x2f sub(Matrix2x2f other) {
+        vals[0][0].sub(other.vals[0][0]);
+        vals[0][1].sub(other.vals[0][1]);
+        vals[1][0].sub(other.vals[1][0]);
+        vals[1][1].sub(other.vals[1][1]);
         return this;
     }
     @Override
     public Matrix2x2f div(RealNumber element) {
+        vals[0][0].div(element);
+        vals[0][1].div(element);
+        vals[1][0].div(element);
+        vals[1][1].div(element);
         return this;
     }
 
     @Override
     public Matrix2x2f mul(RealNumber element) {
+        vals[0][0].mul(element);
+        vals[0][1].mul(element);
+        vals[1][0].mul(element);
+        vals[1][1].mul(element);
         return this;
     }
 
@@ -87,5 +118,15 @@ public class Matrix2x2f implements Matrix<RealNumber, Matrix2x2f>{
     @Override
     public RealNumber get(int row, int col) {
         return vals[row][col];
+    }
+
+
+    //a1 b1     a2  b2  = a1*a2 + b1*c2   a1*b2 + b1*d2
+    //c1 d1  *  c2  d2  = c1*a2 + d1*c2   c1*b2 + d1*d2
+    @Override
+    public Matrix2x2f mul(Matrix2x2f other) {
+        //TODO this
+        vals[0][0].mul(other.get(0,0)).add(get(1,0).clone().mul(other));
+        return null;
     }
 }
