@@ -46,16 +46,25 @@ public class Renderer extends Canvas {
 
         createBufferStrategy(3);
         bs = getBufferStrategy();
-
+/**
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
                                       @Override
                                       public void run() {
+                                          settings.simulator.tick();
                                           render(bs.getDrawGraphics());
+                                          System.out.println("frame " + count);
+                                          count++;
                                       }
                                   }
                 , 0, settings.msPerFrame);
-
+**/
+        while(true){
+            settings.simulator.tick();
+            render(bs.getDrawGraphics());
+            System.out.println("frame " + count);
+            count++;
+        }
     }
 
     public void render(Graphics g){
@@ -95,7 +104,6 @@ public class Renderer extends Canvas {
             if( g != null )
                 g.dispose();
         }
-        count++;
     }
 
     private void drawVectorSpace(BufferedImage img, VectorSpace<RealNumber, Vector2f> vs, RealNumber min, RealNumber max){
@@ -103,7 +111,7 @@ public class Renderer extends Canvas {
             Vector2f val = vs.get(i, j);
             float x = MyMath.map(min.unwrap(), max.unwrap(), 0f, 1f, val.uget(0));
             float y = MyMath.map(min.unwrap(), max.unwrap(), 0f, 1f, val.uget(1));
-            img.setRGB(i, j, new Color(x, y, 0.5f).getRGB());
+            img.setRGB(i, j, new Color(MyMath.clamp(0, x, 1), MyMath.clamp(0, y, 1), 0.5f).getRGB());
         }}
     }
 

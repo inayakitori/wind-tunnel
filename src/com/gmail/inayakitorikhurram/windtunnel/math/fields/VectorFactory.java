@@ -1,7 +1,6 @@
 package com.gmail.inayakitorikhurram.windtunnel.math.fields;
 
 import com.gmail.inayakitorikhurram.windtunnel.Settings;
-import com.gmail.inayakitorikhurram.windtunnel.math.MyMath;
 
 public class VectorFactory {
 
@@ -16,6 +15,8 @@ public class VectorFactory {
             zeroVal = new Vector2f(0, 0);
         } else if (e.getClass().equals(Vector2i.class)) {
             zeroVal = new Vector2i(0, 0);
+        }else if (e.getClass().equals(Matrix2x2f.class)) {
+            zeroVal = new Matrix2x2f(0f, 0f, 0f, 0f);
         }
         return (E) zeroVal;
     }
@@ -31,6 +32,8 @@ public class VectorFactory {
             return vectorSpace(e, (VectorSpaceElement<F, E>) new Vector2f(0, 0));
         }else if(e.getClass().equals(Vector2i.class)){
             return vectorSpace(e, (VectorSpaceElement<F, E>) new Vector2i(0, 0));
+        }else if(e.getClass().equals(Matrix2x2f.class)){
+            return vectorSpace(e, (VectorSpaceElement<F, E>) new Matrix2x2f(0f, 0f, 0f, 0f));
         } else{
             throw new IllegalArgumentException("Invalid vector space");
         }
@@ -90,7 +93,7 @@ public class VectorFactory {
         vs.vals = array(e, vs.pixels);
 
         for(int i = 0; i < vs.pixels.x.unwrap(); i++){ for(int j = 0; j < vs.pixels.y.unwrap(); j++){
-            vs.vals[i][j] = func.f(new Vector2i(i, j));
+            vs.vals[i][j] = func.apply(new Vector2i(i, j));
         }}
 
         return vs;
@@ -107,6 +110,8 @@ public class VectorFactory {
             return (VECTOR[][]) new Vector2f[dims.x.unwrap()][dims.y.unwrap()];
         }else if(e.getClass().equals(Vector2i.class)){
             return (VECTOR[][]) new Vector2i[dims.x.unwrap()][dims.y.unwrap()];
+        }else if(e.getClass().equals(Matrix2x2f.class)){
+            return (VECTOR[][]) new Matrix2x2f[dims.x.unwrap()][dims.y.unwrap()];
         } else{
             throw new IllegalArgumentException("Invalid vector space");
         }

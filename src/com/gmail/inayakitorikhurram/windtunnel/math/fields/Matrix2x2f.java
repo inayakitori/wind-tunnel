@@ -1,5 +1,6 @@
 package com.gmail.inayakitorikhurram.windtunnel.math.fields;
 
+//TODO make it a Matrix class with generics <FIELD,ELEMENTS> and constructor takes dimensions
 public class Matrix2x2f implements Matrix<RealNumber, Matrix2x2f>{
     RealNumber[][] vals;
 
@@ -12,8 +13,19 @@ public class Matrix2x2f implements Matrix<RealNumber, Matrix2x2f>{
     //c d
 
     public Matrix2x2f(Matrix2x2f other){
-        this(other.vals[0][0], other.vals[0][1], other.vals[1][0], other.vals[1][1]);
+        this(
+                other.vals[0][0], other.vals[0][1],
+                other.vals[1][0], other.vals[1][1]
+        );
     }
+    public Matrix2x2f(Vector2f col1, Vector2f col2){
+        this(
+                col1.get(0), col2.get(0),
+                col1.get(1), col2.get(1)
+        );
+    }
+
+
     public Matrix2x2f(RealNumber a , RealNumber b, RealNumber c, RealNumber d){
         vals = new RealNumber[][]{
                 {a.clone(), b.clone()},
@@ -125,8 +137,27 @@ public class Matrix2x2f implements Matrix<RealNumber, Matrix2x2f>{
     //c1 d1  *  c2  d2  = c1*a2 + d1*c2   c1*b2 + d1*d2
     @Override
     public Matrix2x2f mul(Matrix2x2f other) {
-        //TODO this
-        vals[0][0].mul(other.get(0,0)).add(get(1,0).clone().mul(other));
-        return null;
+        //TODO this is disgusting
+        RealNumber a = vals[0][0].clone().mul(other.get(0,0))
+                .add(
+                        get(0,1).clone().mul(other.get(1,0))
+                );
+        RealNumber b = get(0, 0).clone().mul(other.get(0, 1))
+                        .add(
+                                get(0, 1).clone().mul(other.get(1, 1))
+                        );
+        RealNumber c = get(1, 0).clone().mul(other.get(1, 0))
+                        .add(
+                                get(1, 1).clone().mul(other.get(1, 0))
+                        );
+        RealNumber d = vals[1][1].clone().mul(other.get(1,1))
+                .add(
+                        get(1,0).clone().mul(other.get(0,1))
+                );
+        vals[0][0] = a;
+        vals[0][1] = b;
+        vals[1][0] = c;
+        vals[1][1] = d;
+        return this;
     }
 }

@@ -52,4 +52,17 @@ public class MyMath {
         int j = (int)Math.floor(map(settings.bounds.start.uget(1), settings.bounds.end.uget(1), 0, pixels.uget(1), y));
         return new Vector2i(i, j);
     }
+
+    public static float clamp(float a,float  x,float b){
+        if(a < x){
+            if(x < b){
+                return x;
+            } else{//x>=b
+                return b;
+            }
+        }else{//x <= a
+            return a;
+        }
+    }
+
 }

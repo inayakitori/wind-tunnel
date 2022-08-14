@@ -73,6 +73,16 @@ public class IntegerNumber implements FieldElement<IntegerNumber>, UnwrappableFi
     }
 
     @Override
+    public IntegerNumber eDiv(IntegerNumber other) {
+        return div(other);
+    }
+
+    @Override
+    public IntegerNumber eMul(IntegerNumber other) {
+        return mul(other);
+    }
+
+    @Override
     public IntegerNumber get(int i) {
         return this;
     }

@@ -20,7 +20,7 @@ public class Airfoil {
         //scalarMask = x -> isInAeroFoil(x) ? new RealNumber(0) : new RealNumber(1);
         vector2fMask = new FieldFunction<Vector2f>() {
             @Override
-            public Vector2f f(Vector2i x) {
+            public Vector2f apply(Vector2i x) {
                 return isInAeroFoil(x) ? new Vector2f(0, 0) : new Vector2f(1, 1);
             }
         };

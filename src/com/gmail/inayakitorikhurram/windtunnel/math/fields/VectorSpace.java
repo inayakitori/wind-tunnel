@@ -20,7 +20,7 @@ public class VectorSpace
     // It should be fine cause in settings the resolution
     // and everything should only be defined once
     
-    public VectorSpace<FIELD, VECTOR> add(FIELD scalar) {
+    public VectorSpace<FIELD, VECTOR> sAdd(FIELD scalar) {
         //for every pixel
         for(int i = 0; i < pixels.x.unwrap(); i++){ for(int j = 0; j < pixels.y.unwrap(); j++){
             vals[i][j].add(scalar);
@@ -29,7 +29,7 @@ public class VectorSpace
     }
 
 
-    public VectorSpace<FIELD, VECTOR> add(VectorSpace<FIELD, FIELD> scalarField) {
+    public VectorSpace<FIELD, VECTOR> sAdd(VectorSpace<FIELD, FIELD> scalarField) {
         for(int i = 0; i < pixels.x.unwrap(); i++){ for(int j = 0; j < pixels.y.unwrap(); j++){
             vals[i][j].add(scalarField.vals[i][j]);
         }}
@@ -95,7 +95,19 @@ public class VectorSpace
     }
 
     public VECTOR get(Vector2i x){
-        return vals[x.uget(0)][x.uget(1)].clone();
+        if(0 <= x.get(0).unwrap() && x.get(0).unwrap() < settings.getPixels().get(0).unwrap()
+        &&0 <= x.get(1).unwrap() && x.get(1).unwrap() < settings.getPixels().get(1).unwrap()){
+            return vals[x.uget(0)][x.uget(1)].clone();
+        } else{
+            return VectorFactory.zero(get(0, 0));
+        }
     }
 
+
+    public VectorSpace<FIELD, VECTOR> add(VectorSpace<FIELD, VECTOR> other) {
+        for(int i = 0; i < pixels.x.unwrap(); i++){ for(int j = 0; j < pixels.y.unwrap(); j++){
+            vals[i][j].add(other.get(i,j));
+        }}
+        return this;
+    }
 }

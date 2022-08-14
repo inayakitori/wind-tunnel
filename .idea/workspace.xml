@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96234380-acae-44f9-aafa-4189d9a4fa4a" name="Changes" comment="test?&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
+    <list default="true" id="96234380-acae-44f9-aafa-4189d9a4fa4a" name="Changes" comment="More math and sim stuff, working towards finding jacobian matrix&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Airfoil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/Airfoil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/MyMath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/MyMath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/FieldFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/FieldFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/FieldOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/FieldOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/IntegerNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/IntegerNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/Matrix2x2f.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/Matrix2x2f.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/VectorSpaceElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/VectorSpaceElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/RealNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/RealNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/VectorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/VectorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/VectorSpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/math/fields/VectorSpace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/rendering/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/rendering/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +35,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2DA3tKDHqlyFaJ4HOiE3EJdWdQ5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -118,12 +129,12 @@
       <option name="project" value="LOCAL" />
       <updated>1660370626389</updated>
     </task>
-    <task id="LOCAL-00006" summary="test?&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
-      <created>1660397407108</created>
+    <task id="LOCAL-00006" summary="More math and sim stuff, working towards finding jacobian matrix&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;">
+      <created>1660384195932</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1660397407108</updated>
+      <updated>1660384195932</updated>
     </task>
     <option name="localTasksCounter" value="7" />
     <servers />
@@ -146,8 +157,8 @@
     <MESSAGE value="More math x2&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
     <MESSAGE value="started on rendering process&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
     <MESSAGE value="Math refactor: formalising fields, vectors, and vectorspaces with generic types. not tested yet tho&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
-    <MESSAGE value="test?&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="test?&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <MESSAGE value="More math and sim stuff, working towards finding jacobian matrix&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="More math and sim stuff, working towards finding jacobian matrix&#10;-Inaya Khurram &lt;s3943498@student.rmit.edu.au&gt;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -157,9 +168,9 @@
           <option name="timeStamp" value="8" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/rendering/Renderer.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/com/gmail/inayakitorikhurram/windtunnel/simulating/Simulator.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

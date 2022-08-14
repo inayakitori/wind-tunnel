@@ -78,6 +78,16 @@ public class RealNumber implements UnwrappableField<Float, RealNumber> {
     }
 
     @Override
+    public RealNumber eDiv(RealNumber other) {
+        return div(other);
+    }
+
+    @Override
+    public RealNumber eMul(RealNumber other) {
+        return mul(other);
+    }
+
+    @Override
     public RealNumber get(int i) {
         return this;
     }

@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
         Settings settings = Settings.getInstance();
 
-        settings.resolution = 0.002f;
-        settings.bounds = new Rectf(-1f, -1f, 2f, 1f);
+        settings.resolution = 0.005f;
+        settings.bounds = new Rectf(-1f, -1f, 1f, 1f);
         settings.backgroundColor = new Color(0.99f, 0.5f, 0.5f, 0.5f);
         settings.msPerFrame = 16;
         settings.msPerTick = 16;
